@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+:root {
+  --black: #212121;
+  --white: #fff;
+  --primary: #ff735c;
+  --secondary: #4070f6;
+}
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  overflow-x: hidden;
+}
+.btn-handler {
+  padding: 0.75em 1em;
+  background-color: var(--secondary);
+  border: none;
+  cursor: pointer;
+  color: var(--white);
+  border-radius: 0.25em;
+  position: absolute;
+  &.showpass-btn {
+    top: 3%;
+    right: 3%;
+  }
+  &.add-pass {
+    bottom: 3%;
+    left: 3%;
+  }
+}
+.AddingPassword {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  background-color: var(--primary);
+  color: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  & .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    & button[type="submit"] {
+      padding: 0.75em 1em;
+      border: none;
+      margin-left: auto;
+      border-radius: 0.25em;
+      background-color: var(--secondary);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+}
+.img-container {
+  & img {
+    width: 500px;
+  }
+}
+
+.input-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+& .icon-con {
+  height: fit-content;
+  width: fit-content;
+  background-color: var(--white);
+  color: var(--black);
+  padding: 0.6em 1em;
+  font-size: 0.75em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0.25em 0 0 0.25em;
+  border-right: 2px dotted rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+& input {
+  font-size: 1rem;
+  flex: 10;
+  border-radius: 0 0.25em 0.25em 0;
+  padding: 0.5em 1em;
+  font-size: 1.1em;
+  border: none;
+  &:is(:focus) {
+    outline: 2px solid var(--secondary);
+  }
+}
+
+.main-showpass {
+  height: 100%;
+  width: 100%;
+  & .img-con {
+    height: 100%;
+    width: 100%;
+    background-image: url("../assets/bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.6;
+    position: absolute;
+    z-index: -1;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: var(--primary);
+      opacity: 0.3;
+      z-index: 1;
+    }
+  }
+  & .heading {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 5vw;
+    border-bottom: 2px solid var(--primary);
+    & input {
+      padding: 0.5em 1em;
+    }
+  }
+  & .passwords-con {
+    margin: 0 5vw;
+    & .password-card {
+      background-color: #ff735c;
+      max-width: 500px;
+      width: 100%;
+      margin: 2rem auto;
+      & .top,
+      & .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+      }
+      & .top {
+        & a {
+          text-decoration: none;
+          color: var(--white);
+          background-color: var(--secondary);
+          padding: 0.5em 1em;
+        }
+      }
+      & .bottom {
+        & .eye-icon {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 20px;
+  color: var(--white);
+}
+.show-password-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  & .password {
+    text-decoration: underline;
+  }
+}
+.delete-icon {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+@media (max-width: 500px) {
+  .img-container {
+    display: none;
+  }
+}
